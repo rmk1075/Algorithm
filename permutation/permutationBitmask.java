@@ -1,7 +1,7 @@
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class permutationBitmask {
+public class PermutationBitmask {
     static int N, R, totalCnt;
     static int[] input, number;
 
