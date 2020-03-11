@@ -11,6 +11,7 @@ public class NextPermutation {
         N = sc.nextInt();
         input = new int[N];
         for(int i = 0; i < N; i++) input[i] = sc.nextInt();
+        sc.close();
 
         // sequence: smallest number -> biggest number
         Arrays.sort(input);

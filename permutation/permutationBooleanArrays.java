@@ -15,8 +15,8 @@ public class PermutationBooleanArrays {
         number = new int[R];
         isSelected = new boolean[N];
 
-        for(int i = 0; i < N; i++) 
-            input[i] = sc.nextInt();
+        for(int i = 0; i < N; i++) input[i] = sc.nextInt();
+        sc.close();
         
         permutation(0);
         System.out.println("total count : " + totalCnt);

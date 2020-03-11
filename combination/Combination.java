@@ -14,6 +14,7 @@ public class Combination {
         number = new int[R];
 
         for(int i = 0; i < N; i++) input[i] = sc.nextInt();
+        sc.close();
 
         combination(0, 0);
         System.out.println("total count: " + totalCnt);
