@@ -3,25 +3,27 @@ package queue;
 import java.util.Comparator;
 import java.util.PriorityQueue;
 
-class Student implements Comparable<Student> {
-    int id, score;
-    public Student(int id, int score) {
-        this.id = id;
-        this.score = score;
-    }
-
-    @Override
-    public String toString() {
-        return "id: " + this.id + ", score: " + this.score;
-    }
-
-    @Override
-    public int compareTo(Student o) {        
-        return this.id - o.id;
-    }
-}
-
 public class PriorityQueueTest {
+
+    static class Student implements Comparable<Student> {
+        int id, score;
+
+        public Student(int id, int score) {
+            this.id = id;
+            this.score = score;
+        }
+
+        @Override
+        public String toString() {
+            return "id: " + this.id + ", score: " + this.score;
+        }
+
+        @Override
+        public int compareTo(Student o) {
+            return this.id - o.id;
+        }
+    }
+    
     public static void main(String[] args) {
         // PriorityQueue<Student> queue = new PriorityQueue<>();
         PriorityQueue<Student> queue = new PriorityQueue<>(new Comparator<Student>() {
