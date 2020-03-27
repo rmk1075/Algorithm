@@ -28,7 +28,7 @@ public class FloydWarshall {
         for(int i = 1; i <= numOfNodes; i++) {
             for(Node node : edges[i]) {
                 int j = node.idx;
-                this.edges[i][j] = distances[i][j] = Math.min(distances[i][j], node.distnace);
+                this.edges[i][j] = distances[i][j] = Math.min(distances[i][j], node.distance);
             }
         }
 
