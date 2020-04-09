@@ -87,5 +87,10 @@ public class GraphTest {
         System.out.println("prim");
         Prim prim = new Prim(numOfNodes, src, edges);
         System.out.println();
+
+        // kruskal
+        System.out.println("kruskal");
+        Kruskal kruskal = new Kruskal(numOfNodes, edges);
+        System.out.println();
     }
 }
