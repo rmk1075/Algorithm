@@ -29,28 +29,20 @@ import java.util.PriorityQueue;
         }
         
         pq = new PriorityQueue<>();
-        pq.offer(new Node(src, 0));
-        for(Node node : this.edges[src]) pq.offer(node);
+        pq.addAll(edges[src]);
+        int cnt = 1;
         
         visited = new boolean[numOfNodes+1];
         visited[src] = true;
-        while(!pq.isEmpty()) {
+        while(cnt != numOfNodes) {
             Node current = pq.poll();
             if(visited[current.idx]) continue;
             visited[current.idx] = true;
-            
             treeDistance += current.distance;
-            for(Node edge : edges[current.idx]) {
-                if(nodes[edge.idx][0] <= edge.distance) continue;
-                nodes[edge.idx][0] = edge.distance;
-                nodes[edge.idx][1] = current.idx;
-                pq.offer(new Node(edge.idx, nodes[edge.idx][0]));
-            }
+            pq.addAll(this.edges[current.idx]);
+            cnt++;
         }
 
         System.out.println("entire tree distance: " + treeDistance);
-        for(int i = 1; i <= numOfNodes; i++) {
-            System.out.println(i + " - parent: " + nodes[i][1] + ", distance: " + nodes[i][0]);
-        }
     }
  }
