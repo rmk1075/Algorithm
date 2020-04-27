@@ -31,7 +31,7 @@ public class KMP {
             } else {
             // incorrect
             // 일치할 때까지 하나 전칸에서의 공통부분 위치로 이동
-            while(j < 0 && pattern.charAt(i) != pattern.charAt(j)) j = pi[j-1];
+            while(0 < j && pattern.charAt(i) != pattern.charAt(j)) j = pi[j-1];
             }
         }
         return pi;
